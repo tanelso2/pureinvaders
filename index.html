@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/bullet.png" />
+    <title>Pure Invaders</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.css">
+    <style type="text/css">
+        @font-face {
+            font-family: "Retro";
+            src: url("assets/retro_computer.ttf") format("truetype");
+        }
+        body {
+            font-family: "Retro", sans-serif;
+            background-color: #F3742F;
+        }
+        .font-preload {
+            position: absolute;
+            left: -1000px;
+            font-family: "Retro", sans-serif;
+        }
+        #title {
+            height: 100px;
+            line-height: 100px;
+            font-size: 64px;
+            font-weight: bold;
+            background-color:#F3742F;
+            color:yellow;
+        }
+        canvas {
+            margin: auto;
+        }
+    </style>
+    <script src="phaser.min.js"></script>
+</head>
+<body>
+    <div class="font-preload">
+        Shh! It's a secret to everyone!
+    </div>
+    <div class="container">
+        <div class="row" id="title">
+            <marquee behavior="alternate" scrollamount="30" scrolldelay="2" ><blink>PURE INVADERS</blink></marquee>
+        </div>
+        <div class="row">
+            <div id="canvas"></div>
+        </div>
+    </div>
+    <script src="pureinvaders.js"></script>
+</body>
+</html>

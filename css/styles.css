@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Retro";
+    src: url("/font/retro_computer.ttf") format("truetype");
+}
+body {
+    font-family: "Retro", sans-serif;
+    background-color: #F3742F;
+}
+.font-preload {
+    position: absolute;
+    left: -1000px;
+    font-family: "Retro", sans-serif;
+}
+#title {
+    height: 100px;
+    line-height: 100px;
+    font-size: 64px;
+    font-weight: bold;
+    background-color:#F3742F;
+    color:yellow;
+}
+canvas {
+    margin: auto;
+}

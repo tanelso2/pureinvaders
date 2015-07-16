@@ -4,34 +4,10 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="assets/bullet.png" />
     <title>Pure Invaders</title>
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap.css">
-    <style type="text/css">
-        @font-face {
-            font-family: "Retro";
-            src: url("assets/retro_computer.ttf") format("truetype");
-        }
-        body {
-            font-family: "Retro", sans-serif;
-            background-color: #F3742F;
-        }
-        .font-preload {
-            position: absolute;
-            left: -1000px;
-            font-family: "Retro", sans-serif;
-        }
-        #title {
-            height: 100px;
-            line-height: 100px;
-            font-size: 64px;
-            font-weight: bold;
-            background-color:#F3742F;
-            color:yellow;
-        }
-        canvas {
-            margin: auto;
-        }
-    </style>
-    <script src="phaser.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/lib/phaser.min.js"></script>
+    <script src="/lib/pouchdb-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="font-preload">
@@ -45,6 +21,6 @@
             <div id="canvas"></div>
         </div>
     </div>
-    <script src="pureinvaders.js"></script>
+    <script src="/js/pureinvaders.js"></script>
 </body>
 </html>

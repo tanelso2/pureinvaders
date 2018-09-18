@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Retro";
-    src: url("/font/retro_computer.ttf") format("truetype");
+    src: url("../font/retro_computer.ttf") format("truetype");
 }
 body {
     font-family: "Retro", sans-serif;

@@ -1,0 +1,37 @@
+language: minimal
+sudo: required
+services:
+- docker
+env:
+  global:
+  # Do not prompt for user input when using any SDK methods.
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - REPO_NAME=pureinvaders
+  - GCR_REPO=gcr.io/kubernetes-221218
+  - HELM_RELEASE=early-worm
+  - HELM_CHART_DIR=helm/pureinvaders
+before_install:
+- if [ ! -d $HOME/google-cloud-sdk/bin ]; then
+    rm -rf $HOME/google-cloud-sdk;
+    curl https://sdk.cloud.google.com | bash > /dev/null;
+  fi
+- source $HOME/google-cloud-sdk/path.bash.inc
+- gcloud components update kubectl
+- gcloud version
+- openssl aes-256-cbc -K $encrypted_392be9dbc964_key -iv $encrypted_392be9dbc964_iv
+  -in service-account.json.enc -out service-account.json -d
+script:
+- docker build -t $REPO_NAME:latest .
+before_deploy:
+- scripts/install_helm.sh
+cache:
+  directories:
+  # We cache the SDK so we don't have to download it again on subsequent builds.
+  - $HOME/google-cloud-sdk
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: scripts/deploy.sh
+  on:
+    repo: tanelso2/pureinvaders
+    branch: master
